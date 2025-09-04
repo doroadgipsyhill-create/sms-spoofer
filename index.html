@@ -52,6 +52,14 @@
       align-items: center;
     }
 
+    label {
+      align-self: flex-start;
+      margin-bottom: 5px;
+      font-weight: 300;
+      font-size: 14px;
+      color: #ccc;
+    }
+
     input, textarea {
       width: 100%;
       padding: 10px;
@@ -65,12 +73,6 @@
       font-weight: 300;
       box-sizing: border-box;
       font-size: 15px;
-    }
-
-    input::placeholder,
-    textarea::placeholder {
-      color: #ccc;
-      font-weight: 300;
     }
 
     button {
@@ -100,11 +102,18 @@
   <div class="caption">Send SMS with any Sender ID</div>
 
   <form id="smsForm">
-    License Key:
-    <input type="text" id="license" placeholder="License Key" required>
-    <input type="text" id="sender" placeholder="Sender ID" maxlength="11" required>
-    <input type="text" id="recipient" placeholder="Recipient" required>
-    <textarea id="message" placeholder="Message" required></textarea>
+    <label for="license">License Key:</label>
+    <input type="text" id="license" required>
+
+    <label for="sender">Sender ID:</label>
+    <input type="text" id="sender" maxlength="11" required>
+
+    <label for="recipient">Recipient:</label>
+    <input type="text" id="recipient" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" required></textarea>
+
     <button type="submit">Send SMS</button>
   </form>
 
